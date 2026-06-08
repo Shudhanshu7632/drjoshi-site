@@ -5,21 +5,21 @@ import { motion } from "framer-motion";
 
 const pillars = [
   {
-    image: "/Filtering Power.jpg",
+    image: "/Nephrology & Oncology.png",
     title: "Nephrology & Oncology",
     subtitle: "Specialist-grade care, continuously monitored",
     desc: "Biomarker-driven protocols for CKD and cancer. Every stage tracked, every intervention coordinated. Precision medicine without the gaps.",
     tags: ["CKD Protocols", "Oncology Support", "Biomarker Monitoring"],
   },
   {
-    image: "/Energy.jpg",
+    image: "/Ayurveda & Botanicals.png",
     title: "Ayurveda & Botanicals",
     subtitle: "Ancient formulations, clinically validated",
     desc: "Targeted herbal protocols that reduce treatment side-effects, address root causes, and support recovery in ways modern medicine cannot reach alone.",
     tags: ["Herbal Protocols", "Side-effect Management", "Root Cause Care"],
   },
   {
-    image: "/Nutritional Strength.jpg",
+    image: "/Nutraceuticals & Nutrition.png",
     title: "Nutraceuticals & Nutrition",
     subtitle: "Food as medicine, precision-delivered",
     desc: "Disease-specific dietary protocols and evidence-based supplementation to rebuild kidney function, strengthen treatment tolerance, and restore metabolic balance.",

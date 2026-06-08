@@ -16,7 +16,7 @@ const conditions = [
     ],
     cta: "View CKD Protocol →",
     href: "/ckd-kidney-treatment",
-    image: "/Kidney health.png",
+    image: "/CKD · Stages 2–5.png",
     accent: "#2E5B9A",
   },
   {
@@ -30,7 +30,7 @@ const conditions = [
     ],
     cta: "View Cancer Protocol →",
     href: "/cancer-ayurveda",
-    image: "/Cancer Activity.jpg",
+    image: "/Cancer Support · Oncology.png",
     accent: "#2D6A4F",
   },
 ];
@@ -38,14 +38,12 @@ const conditions = [
 export default function ConditionSection() {
   return (
     <section className="relative overflow-hidden bg-[#eef4fb] py-10">
-
       <div className="absolute inset-0 bg-gradient-to-br from-[#edf4fb] via-[#dbe6f2] to-[#c7d8ea]" />
       <div className="absolute top-[-180px] left-[-120px] w-[500px] h-[500px] bg-[#8BC34A]/8 blur-[120px] rounded-full" />
       <div className="absolute bottom-[-180px] right-[-120px] w-[500px] h-[500px] bg-[#7aa5df]/12 blur-[120px] rounded-full" />
 
       <div className="relative z-10 max-w-[1350px] mx-auto px-6">
         <div className="relative rounded-[38px] overflow-hidden px-8 md:px-16 py-16 md:py-20 bg-white/55 backdrop-blur-2xl border border-white/70 shadow-[0_30px_80px_rgba(46,91,154,0.10)]">
-
           <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent pointer-events-none" />
 
           {/* HEADER */}
@@ -55,66 +53,217 @@ export default function ConditionSection() {
             </p>
             <h2 className="text-[38px] md:text-[54px] leading-[1.08] tracking-[-0.03em] text-[#0a1b32] font-light">
               Two conditions.{" "}
-              <span className="italic text-[#2D6A4F]" style={{ fontFamily: "Cormorant Garamond, serif" }}>
+              <span
+                className="italic text-[#2D6A4F]"
+                style={{ fontFamily: "Cormorant Garamond, serif" }}
+              >
                 One coordinated priority.
               </span>
             </h2>
             <p className="mt-6 text-[#1a2a3a] text-[16px] leading-[1.8] max-w-[620px]">
-              Every protocol at Dr. Joshi's clinic is built around CKD and cancer. Not general medicine. Three disciplines, coordinated around your biomarkers, applied in full.
+              Every protocol at Dr. Joshi's clinic is built around CKD and
+              cancer. Not general medicine. Three disciplines, coordinated
+              around your biomarkers, applied in full.
             </p>
           </div>
 
           {/* CARDS */}
-          <div className="relative z-10 grid md:grid-cols-2 gap-8">
+          {/* CARDS */}
+          <div className="relative z-10 grid lg:grid-cols-2 gap-8">
             {conditions.map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.35, delay: i * 0.1 }}
+                transition={{
+                  duration: 0.4,
+                  delay: i * 0.1,
+                }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-[30px] bg-white/60 backdrop-blur-xl border border-white/80 shadow-[0_18px_50px_rgba(46,91,154,0.08)] hover:shadow-[0_24px_70px_rgba(46,91,154,0.14)] transition-all duration-500"
+                className="
+        group
+
+        overflow-hidden
+
+        rounded-[32px]
+
+        bg-white
+
+        border border-[#E6EDF5]
+
+        shadow-[0_15px_40px_rgba(16,35,59,0.06)]
+
+        hover:shadow-[0_25px_60px_rgba(16,35,59,0.10)]
+
+        transition-all
+        duration-500
+      "
               >
-                {/* TOP IMAGE STRIP */}
-                <div className="relative h-[180px] overflow-hidden">
+                {/* IMAGE */}
+                <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="
+            object-cover
+
+            transition-transform
+            duration-700
+
+            group-hover:scale-105
+          "
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/90" />
-                  {/* TAG over image */}
-                  <div className="absolute top-5 left-6">
-                    <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-white/60 text-[#2E5B9A] text-[11px] font-medium tracking-[0.08em]">
+
+                  {/* OVERLAY */}
+                  <div
+                    className="
+            absolute inset-0
+
+            bg-gradient-to-t
+            from-[#081524]/75
+            via-[#081524]/15
+            to-transparent
+          "
+                  />
+
+                  {/* TAG */}
+                  <div className="absolute top-5 left-5">
+                    <span
+                      className="
+              inline-flex
+              items-center
+
+              px-4 py-2
+
+              rounded-full
+
+              bg-white/90
+              backdrop-blur-xl
+
+              text-[#2E5B9A]
+
+              text-[11px]
+
+              font-medium
+
+              tracking-[0.05em]
+            "
+                    >
                       {item.tag}
                     </span>
+                  </div>
+
+                  {/* TITLE */}
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h3
+                      className="
+              text-white
+
+              text-[30px]
+              md:text-[34px]
+
+              leading-[1.1]
+
+              tracking-[-0.03em]
+
+              font-light
+            "
+                    >
+                      {item.title}
+                    </h3>
                   </div>
                 </div>
 
                 {/* CONTENT */}
-                <div className="p-8 md:p-10 pt-6">
-                  {/* Accent line */}
-                  <div className="h-[2px] w-10 mb-6 rounded-full" style={{ background: item.accent }} />
+                <div className="p-8 md:p-10">
+                  {/* Accent */}
+                  <div
+                    className="h-[3px] w-12 rounded-full mb-6"
+                    style={{
+                      background: item.accent,
+                    }}
+                  />
 
-                  <h3 className="text-[24px] font-semibold leading-tight text-[#0a1b32]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-[#1a2a3a] text-[17px] font-medium leading-relaxed">
+                  {/* Headline */}
+                  <p
+                    className="
+            text-[#10233B]
+
+            text-[22px]
+
+            leading-[1.45]
+
+            font-medium
+          "
+                  >
                     {item.headline}
                   </p>
-                  <p className="mt-4 text-[#6b7f97] text-[15px] leading-[1.8]">
+
+                  {/* Description */}
+                  <p
+                    className="
+            mt-5
+
+            text-[#5F738C]
+
+            text-[15px]
+
+            leading-[1.9]
+          "
+                  >
                     {item.desc}
                   </p>
 
                   {/* STATS */}
-                  <div className="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-[#e8eef7]">
+                  <div
+                    className="
+            mt-8
+
+            pt-8
+
+            border-t
+            border-[#E6EDF5]
+
+            grid
+            grid-cols-2
+
+            gap-8
+          "
+                  >
                     {item.stats.map((stat, idx) => (
                       <div key={idx}>
-                        <p className="text-[28px] font-light tracking-tight text-[#0a1b32]">
+                        <h4
+                          className="
+                  text-[#10233B]
+
+                  text-[34px]
+
+                  font-light
+
+                  leading-none
+
+                  tracking-[-0.03em]
+                "
+                        >
                           {stat.value}
-                        </p>
-                        <p className="mt-1 text-[12px] text-[#6b7f97] leading-snug">
+                        </h4>
+
+                        <p
+                          className="
+                  mt-2
+
+                  text-[#7A8899]
+
+                  text-[12px]
+
+                  leading-relaxed
+
+                  uppercase
+
+                  tracking-[0.04em]
+                "
+                        >
                           {stat.label}
                         </p>
                       </div>
@@ -125,8 +274,24 @@ export default function ConditionSection() {
                   <div className="mt-8">
                     <Link
                       href={item.href}
-                      className="inline-flex items-center gap-2 text-[15px] font-medium transition-all duration-300"
-                      style={{ color: item.accent }}
+                      className="
+              inline-flex
+              items-center
+
+              gap-2
+
+              text-[15px]
+
+              font-medium
+
+              transition-all
+              duration-300
+
+              hover:gap-3
+            "
+                      style={{
+                        color: item.accent,
+                      }}
                     >
                       {item.cta}
                     </Link>

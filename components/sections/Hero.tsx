@@ -16,7 +16,9 @@ function Counter({ value }: { value: string }) {
     const controls = animate(0, numeric, {
       duration: 1.6,
       ease: "easeOut",
-      onUpdate(v) { setDisplay(Math.floor(v)); },
+      onUpdate(v) {
+        setDisplay(Math.floor(v));
+      },
     });
     return () => controls.stop();
   }, [inView, value]);
@@ -32,7 +34,6 @@ function Counter({ value }: { value: string }) {
 export default function Hero() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden bg-[#eef4fb]">
-
       <div className="absolute inset-0 bg-gradient-to-br from-[#edf4fb] via-[#dbe6f2] to-[#c7d8ea]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(95,143,230,0.14),transparent_35%)] opacity-80" />
       <div className="absolute top-[-200px] right-[-140px] w-[700px] h-[700px] bg-[#5f8fe6]/15 blur-[120px] rounded-full" />
@@ -40,16 +41,13 @@ export default function Hero() {
 
       <div className="relative z-20 max-w-[1380px] mx-auto px-6 lg:px-10 pt-5 pb-8">
         <div className="relative overflow-hidden rounded-[38px] bg-white/55 backdrop-blur-2xl border border-white/70 shadow-[0_30px_80px_rgba(46,91,154,0.10)] px-8 md:px-14 pt-24 pb-10 md:pt-28 md:pb-14">
-
           <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/15 to-transparent pointer-events-none" />
           <div className="absolute inset-[1px] rounded-[37px] border border-white/30 pointer-events-none" />
           <div className="absolute top-[-120px] left-[120px] w-[420px] h-[420px] bg-white/30 blur-[100px] rounded-full" />
 
           <div className="grid lg:grid-cols-[1.02fr_0.98fr] items-center gap-12 lg:gap-4">
-
             {/* LEFT */}
             <div className="relative z-10 max-w-[650px]">
-
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -79,8 +77,8 @@ export default function Hero() {
                 className="mt-10 text-[#1a2a3a] text-[17px] leading-[1.7] max-w-[500px]"
               >
                 Most CKD and cancer patients see three specialists who never
-                speak to each other. Dr. Joshi coordinates nephrology,
-                Ayurveda, and nutrition within one biomarker-driven protocol.
+                speak to each other. Dr. Joshi coordinates nephrology, Ayurveda,
+                and nutrition within one biomarker-driven protocol.
               </motion.p>
 
               <motion.div
@@ -89,10 +87,16 @@ export default function Hero() {
                 transition={{ delay: 0.3 }}
                 className="mt-10 flex flex-wrap gap-4"
               >
-                <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#2E5B9A] text-white font-medium text-[15px] tracking-[0.02em] border border-[#5f8fe6]/20 shadow-[0_14px_40px_rgba(46,91,154,0.24)] hover:bg-[#244b82] hover:shadow-[0_18px_45px_rgba(46,91,154,0.30)] hover:scale-[1.03] transition-all duration-300">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#2E5B9A] text-white font-medium text-[15px] tracking-[0.02em] border border-[#5f8fe6]/20 shadow-[0_14px_40px_rgba(46,91,154,0.24)] hover:bg-[#244b82] hover:shadow-[0_18px_45px_rgba(46,91,154,0.30)] hover:scale-[1.03] transition-all duration-300"
+                >
                   Begin Assessment →
                 </Link>
-                <Link href="/treatments" className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-white/55 backdrop-blur-xl border border-[#d1deef] text-[#1f3d63] font-medium text-[15px] tracking-[0.02em] shadow-[0_8px_25px_rgba(255,255,255,0.25)] hover:bg-white/75 hover:border-[#b9cde7] transition-all duration-300">
+                <Link
+                  href="/treatments"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-white/55 backdrop-blur-xl border border-[#d1deef] text-[#1f3d63] font-medium text-[15px] tracking-[0.02em] shadow-[0_8px_25px_rgba(255,255,255,0.25)] hover:bg-white/75 hover:border-[#b9cde7] transition-all duration-300"
+                >
                   See the Protocol →
                 </Link>
               </motion.div>
@@ -100,53 +104,41 @@ export default function Hero() {
 
             {/* RIGHT */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.92, x: 40 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ duration: 0.9 }}
-              className="relative hidden lg:flex items-center justify-center"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative hidden lg:flex justify-center"
             >
-              <motion.div
-                animate={{ y: [0, -18, 0], rotate: [0, 1.2, 0, -1.2, 0] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                whileHover={{ scale: 1.04 }}
-                className="relative w-full max-w-[860px] aspect-square cursor-pointer"
-              >
-                <div className="absolute inset-0 bg-[#5f8fe6]/12 blur-[120px] rounded-full scale-[0.88] -z-20" />
-                <div className="absolute top-[18%] left-[15%] w-[400px] h-[400px] bg-[#8BC34A]/10 blur-[100px] rounded-full -z-10" />
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-[10%] rounded-full border border-white/30 backdrop-blur-sm"
-                />
-                <motion.div
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-[22%] rounded-full border border-[#5f8fe6]/20"
-                />
-                <motion.div
-                  whileHover={{ scale: 1.06, y: -10 }}
-                  transition={{ type: "spring", stiffness: 120, damping: 18 }}
-                  className="relative w-full h-full"
+              <div className="relative w-full max-w-[720px]">
+                <div
+                  className="
+        relative
+        overflow-hidden
+
+        rounded-[32px]
+
+        bg-white
+
+        border border-[#E6EDF5]
+
+        shadow-[0_20px_60px_rgba(46,91,154,0.10)]
+      "
                 >
                   <Image
-                    src="/heartbanner.png"
-                    alt="Integrated Care Visual"
-                    fill
+                    src="/heros image.png"
+                    alt="Integrated Healthcare"
+                    width={1200}
+                    height={900}
                     priority
-                    className="object-contain drop-shadow-[0_60px_120px_rgba(46,91,154,0.25)] select-none pointer-events-none"
+                    className="
+          w-full
+          h-auto
+
+          object-contain
+        "
                   />
-                </motion.div>
-                <motion.div
-                  animate={{ y: [0, -12, 0], opacity: [0.5, 1, 0.5] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute top-[12%] right-[14%] w-4 h-4 rounded-full bg-[#5f8fe6] shadow-[0_0_30px_rgba(95,143,230,0.8)]"
-                />
-                <motion.div
-                  animate={{ y: [0, 14, 0], opacity: [0.4, 0.9, 0.4] }}
-                  transition={{ duration: 5, repeat: Infinity }}
-                  className="absolute bottom-[16%] left-[12%] w-3 h-3 rounded-full bg-[#8BC34A] shadow-[0_0_24px_rgba(139,195,74,0.7)]"
-                />
-              </motion.div>
+                </div>
+              </div>
             </motion.div>
           </div>
 

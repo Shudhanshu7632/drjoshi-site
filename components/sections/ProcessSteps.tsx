@@ -25,21 +25,21 @@ const steps = [
     title: "Review Your Results",
     desc: "Your results reviewed in one session. Kidney function, oncology markers, Ayurvedic assessment, and nutritional status interpreted together as one clinical picture.",
     tags: ["Kidney Function", "Oncology Markers", "Nutritional Status"],
-    image: "/get your plan.png",
+    image: "/Review Your Results.png",
   },
   {
     number: "04",
     title: "Act on Your Plan",
     desc: "Leave with a personalised integrated protocol. Dietary guidance, herbal formulations, and next clinical steps you can begin immediately.",
     tags: ["Personalised Protocol", "Dietary Plan", "Herbal Formulations"],
-    image: "/Act on your plan.png",
+    image: "/Act on Your Plan.png",
   },
   {
     number: "05",
     title: "Follow-Up & Refinement",
     desc: "Regular check-ins to assess progress, adjust treatment direction, and track biomarkers continuously over time.",
     tags: ["Progress Tracking", "Biomarker Review", "Protocol Adjustment"],
-    image: "/followups.png",
+    image: "/Follow-Up & Refinement.png",
   },
 ];
 

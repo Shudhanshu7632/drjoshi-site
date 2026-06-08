@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+
   {
     href: "/treatments",
     label: "Treatments",
@@ -17,6 +18,7 @@ const navLinks = [
   { href: "/success-stories", label: "Stories" },
   { href: "/blog", label: "Blog" },
   { href: "/faqs", label: "FAQs" },
+  { href: "/contact", label: "Contact" },
 ];
 
 const treatmentLinks = [
@@ -40,7 +42,10 @@ export default function Navbar() {
   // Close desktop dropdown on outside click
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
         setDropdownOpen(false);
       }
     };
@@ -51,7 +56,9 @@ export default function Navbar() {
   // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
   const closeMobile = () => setMobileOpen(false);
@@ -66,9 +73,10 @@ export default function Navbar() {
             px-5 md:px-8 lg:px-10
             rounded-full
             transition-all duration-500
-            ${scrolled
-              ? "bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(241,247,255,0.92))] backdrop-blur-2xl border border-white/70 shadow-[0_12px_40px_rgba(46,91,154,0.08)]"
-              : "bg-[linear-gradient(135deg,rgba(255,255,255,0.78),rgba(236,244,252,0.90),rgba(222,235,248,0.95))] backdrop-blur-2xl border border-white/65 shadow-[0_18px_45px_rgba(46,91,154,0.08)]"
+            ${
+              scrolled
+                ? "bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(241,247,255,0.92))] backdrop-blur-2xl border border-white/70 shadow-[0_12px_40px_rgba(46,91,154,0.08)]"
+                : "bg-[linear-gradient(135deg,rgba(255,255,255,0.78),rgba(236,244,252,0.90),rgba(222,235,248,0.95))] backdrop-blur-2xl border border-white/65 shadow-[0_18px_45px_rgba(46,91,154,0.08)]"
             }
           `}
         >
@@ -78,7 +86,11 @@ export default function Navbar() {
           <div className="absolute bottom-[-120px] left-[-60px] w-[220px] h-[220px] bg-[#8BC34A]/10 blur-[90px] rounded-full pointer-events-none" />
 
           {/* LOGO */}
-          <Link href="/" onClick={closeMobile} className="relative z-20 flex items-center min-w-0 flex-shrink-0">
+          <Link
+            href="/"
+            onClick={closeMobile}
+            className="relative z-20 flex items-center min-w-0 flex-shrink-0"
+          >
             <Image
               src="/transparent.png"
               alt="logo"
@@ -135,7 +147,7 @@ export default function Navbar() {
                 >
                   {link.label}
                 </Link>
-              )
+              ),
             )}
           </nav>
 
@@ -222,7 +234,7 @@ export default function Navbar() {
                       >
                         {link.label}
                       </Link>
-                    )
+                    ),
                   )}
 
                   {/* Divider */}

@@ -124,7 +124,7 @@ export default function AboutPage() {
               {/* LEFT — PHOTO with parallax */}
               <motion.div ref={photoRef} style={{ y: photoY }} className="hidden lg:block">
                 <div className="relative h-full min-h-[480px] overflow-hidden rounded-[24px] border border-white/70 shadow-[0_20px_60px_rgba(46,91,154,0.10)]">
-                  <Image src="/main.jpg" alt="Dr. Vyankatesh Joshi" fill priority className="object-cover object-top scale-[1.04]" />
+                  {/* <Image src="/main.jpg" alt="Dr. Vyankatesh Joshi" fill priority className="object-cover object-top scale-[1.04]" /> */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a1b32]/55 via-transparent to-transparent" />
                   {/* Floating credential */}
                   <motion.div
